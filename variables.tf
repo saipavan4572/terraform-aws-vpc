@@ -85,6 +85,11 @@ variable "database_subnet_cidr_tags" {
     default = {}
 }
 
+variable "database_subnet_group_tags" {
+    type = map
+    default = {}
+}
+
 ### NAT Gateway ####
 variable "nat_gateway_tags" {
     type = map
@@ -105,6 +110,22 @@ variable "private_route_table_tags" {
 
 ### Database route table tags ####
 variable "database_route_table_tags" {
+    type = map
+    default = {}
+}
+
+#### Peering ####
+variable "is_peering_required" {
+    type = bool
+    default = false
+}
+
+variable "acceptor_vpc_id" {
+    type = string
+    default = ""
+}
+
+variable "vpc_peering_tags" {
     type = map
     default = {}
 }
